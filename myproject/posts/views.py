@@ -9,7 +9,5 @@ from .models import Post
 def posts(request):
     posts = Post.objects.all().values()
     template = loader.get_template("myfirst.html")
-    context = {
-        "posts": posts,
-    }
+    context = {"posts": posts, "user": "Jio!"}
     return HttpResponse(template.render(context, request))
